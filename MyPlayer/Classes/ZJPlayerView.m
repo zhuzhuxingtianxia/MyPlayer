@@ -291,8 +291,8 @@
 -(UIButton*)playBtn{
     if (!_playBtn) {
         _playBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_playBtn setImage:[UIImage imageNamed:@"moviePause"] forState:UIControlStateNormal];
-        [_playBtn setImage:[UIImage imageNamed:@"moviePlay"] forState:UIControlStateSelected];
+        [_playBtn setImage:[UIImage imageNamed:@"moviePlay"] forState:UIControlStateNormal];
+        [_playBtn setImage:[UIImage imageNamed:@"moviePause"] forState:UIControlStateSelected];
         [_playBtn addTarget:self action:@selector(playVideoAction:) forControlEvents:UIControlEventTouchUpInside];
         
     }

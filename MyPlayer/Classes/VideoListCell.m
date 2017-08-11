@@ -49,8 +49,6 @@
          self.playerView.movieUrl = @"http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4";
     }else if (pp%3 == 2){
         self.playerView.movieUrl = @"register_guide_video.mp4";
-    }else{
-        self.playerView.movieUrl = @"register_guide_video.mp4";
     }
    
 }
