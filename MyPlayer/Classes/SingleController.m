@@ -22,7 +22,7 @@
      playerView.frame = CGRectMake(10, 10+64, [UIScreen mainScreen].bounds.size.width - 20, 180);
      playerView.backgroundColor = [UIColor blackColor];
      
-     playerView.movieUrl = @"register_guide_video.mp4";//@"http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4";//@"http://www.jxvdy.com/file/upload/201309/18/18-10-03-19-3.mp4";//
+     playerView.movieUrl = @"38025-GALA-YOUNGFORYOU[68mtv.com].mp4";//@"http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4";//@"http://www.jxvdy.com/file/upload/201309/18/18-10-03-19-3.mp4";//
      playerView.cuttentController = self;
      [self.view addSubview:playerView];
      

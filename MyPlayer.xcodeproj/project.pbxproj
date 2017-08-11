@@ -43,6 +43,7 @@
 		B6257E4E1F3C6DF500D834BC /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B6257E4D1F3C6DF500D834BC /* UIImage+Additions.m */; };
 		B6257E501F3C725E00D834BC /* star@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B6257E4F1F3C725E00D834BC /* star@2x.jpg */; };
 		B6257E531F3C73D600D834BC /* SingleController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6257E521F3C73D600D834BC /* SingleController.m */; };
+		B6257E5D1F3D59DC00D834BC /* 38025-GALA-YOUNGFORYOU[68mtv.com].mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B6257E5C1F3D582C00D834BC /* 38025-GALA-YOUNGFORYOU[68mtv.com].mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		B6257E4F1F3C725E00D834BC /* star@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "star@2x.jpg"; sourceTree = "<group>"; };
 		B6257E511F3C73D600D834BC /* SingleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleController.h; sourceTree = "<group>"; };
 		B6257E521F3C73D600D834BC /* SingleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleController.m; sourceTree = "<group>"; };
+		B6257E5C1F3D582C00D834BC /* 38025-GALA-YOUNGFORYOU[68mtv.com].mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "38025-GALA-YOUNGFORYOU[68mtv.com].mp4"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +229,7 @@
 			children = (
 				B6257E481F3C6DDB00D834BC /* register_guide_video.mp4 */,
 				B6257E491F3C6DDB00D834BC /* 02.mov */,
+				B6257E5C1F3D582C00D834BC /* 38025-GALA-YOUNGFORYOU[68mtv.com].mp4 */,
 				B6257E101F3C66D900D834BC /* ViewController.h */,
 				B6257E111F3C66DA00D834BC /* ViewController.m */,
 				B6257E191F3C674A00D834BC /* OtherController.h */,
@@ -364,6 +367,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6257E5D1F3D59DC00D834BC /* 38025-GALA-YOUNGFORYOU[68mtv.com].mp4 in Resources */,
 				B6257E501F3C725E00D834BC /* star@2x.jpg in Resources */,
 				B6257E1F1F3C6AD500D834BC /* sy_table_syicon_xz@2x.png in Resources */,
 				B6257E431F3C6DCB00D834BC /* moviePlay@2x.png in Resources */,
@@ -655,6 +659,7 @@
 				B6257E041F3C664600D834BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B6257E051F3C664600D834BC /* Build configuration list for PBXNativeTarget "MyPlayerTests" */ = {
 			isa = XCConfigurationList;
@@ -663,6 +668,7 @@
 				B6257E071F3C664600D834BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B6257E081F3C664600D834BC /* Build configuration list for PBXNativeTarget "MyPlayerUITests" */ = {
 			isa = XCConfigurationList;
@@ -671,6 +677,7 @@
 				B6257E0A1F3C664600D834BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
