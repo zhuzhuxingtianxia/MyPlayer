@@ -13,6 +13,7 @@
 -(void)playerManagerTotalTime:(NSInteger)totalTime bufferTime:(NSInteger)bufferTime;
 -(void)playerManagerCuttentTime:(NSInteger)cuttentTime;
 -(void)playerManagerPlayerStatus:(AVPlayerItemStatus)itemStatus;
+-(void)playerManagerShouldPlayLoad:(BOOL)shouldPlay;
 -(void)playerManagerDidFinish;
 -(void)playerManagerDidFailed;
 

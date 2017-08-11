@@ -171,9 +171,15 @@ static AVAudioSession *audioSession;
 }
 -(void)playerPlaybackStalledNotification:(NSNotification *)notification{
     NSLog(@"停止");
+    if ([self.delegate respondsToSelector:@selector(playerManagerShouldPlayLoad:)]) {
+        [self.delegate playerManagerShouldPlayLoad:NO];
+    }
 }
 -(void)playerShouldPlayNotification:(NSNotification *)notification{
     NSLog(@"可播放");
+    if ([self.delegate respondsToSelector:@selector(playerManagerShouldPlayLoad:)]) {
+        [self.delegate playerManagerShouldPlayLoad:YES];
+    }
 }
 -(void)playerPlayErrorNotification:(NSNotification *)notification{
     NSLog(@"播放出错");

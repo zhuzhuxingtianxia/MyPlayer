@@ -227,6 +227,13 @@
         [self playerManagerDidFailed];
     }
 }
+-(void)playerManagerShouldPlayLoad:(BOOL)shouldPlay{
+    if (shouldPlay) {
+        [self.activityView stopAnimating];
+    }else{
+       [self.activityView startAnimating];
+    }
+}
 //播放完成
 -(void)playerManagerDidFinish{
     _totalPlayTimeLabel.text = @"00:00";
