@@ -44,6 +44,7 @@
 		B6257E501F3C725E00D834BC /* star@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B6257E4F1F3C725E00D834BC /* star@2x.jpg */; };
 		B6257E531F3C73D600D834BC /* SingleController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6257E521F3C73D600D834BC /* SingleController.m */; };
 		B6257E5D1F3D59DC00D834BC /* 38025-GALA-YOUNGFORYOU[68mtv.com].mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B6257E5C1F3D582C00D834BC /* 38025-GALA-YOUNGFORYOU[68mtv.com].mp4 */; };
+		B697162A1F590FA80008D71F /* UINavigationController+Autorotate.m in Sources */ = {isa = PBXBuildFile; fileRef = B69716291F590FA80008D71F /* UINavigationController+Autorotate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,8 @@
 		B6257E511F3C73D600D834BC /* SingleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleController.h; sourceTree = "<group>"; };
 		B6257E521F3C73D600D834BC /* SingleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleController.m; sourceTree = "<group>"; };
 		B6257E5C1F3D582C00D834BC /* 38025-GALA-YOUNGFORYOU[68mtv.com].mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "38025-GALA-YOUNGFORYOU[68mtv.com].mp4"; sourceTree = "<group>"; };
+		B69716281F590FA80008D71F /* UINavigationController+Autorotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Autorotate.h"; sourceTree = "<group>"; };
+		B69716291F590FA80008D71F /* UINavigationController+Autorotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Autorotate.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +219,8 @@
 				B6257E141F3C670D00D834BC /* TabBarController.m */,
 				B6257E161F3C672700D834BC /* NavigationController.h */,
 				B6257E171F3C672700D834BC /* NavigationController.m */,
+				B69716281F590FA80008D71F /* UINavigationController+Autorotate.h */,
+				B69716291F590FA80008D71F /* UINavigationController+Autorotate.m */,
 				B6257E1C1F3C6AC100D834BC /* sy_table_syicon_wxz@2x.png */,
 				B6257E1E1F3C6AD500D834BC /* sy_table_syicon_xz@2x.png */,
 				B6257E201F3C6AE900D834BC /* sy_table_jgiconj_xz@2x.png */,
@@ -424,6 +429,7 @@
 				B6257E4E1F3C6DF500D834BC /* UIImage+Additions.m in Sources */,
 				B6257E121F3C66DA00D834BC /* ViewController.m in Sources */,
 				B6257DDA1F3C664600D834BC /* main.m in Sources */,
+				B697162A1F590FA80008D71F /* UINavigationController+Autorotate.m in Sources */,
 				B6257E3A1F3C6DCB00D834BC /* ZJPlayerView.m in Sources */,
 				B6257E531F3C73D600D834BC /* SingleController.m in Sources */,
 			);
@@ -574,6 +580,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MyPlayer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -586,6 +593,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MyPlayer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
