@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VideoListModel.h"
+
 @interface VideoListCell : UITableViewCell
 
-+(VideoListCell*)shareCell:(UITableView*)tableView model:(id)model;
++(VideoListCell*)shareCell:(UITableView*)tableView model:(VideoListModel*)model;
 @end

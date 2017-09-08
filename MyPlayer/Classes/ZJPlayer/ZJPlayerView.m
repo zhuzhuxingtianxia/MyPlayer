@@ -68,12 +68,26 @@
 -(void)setMovieUrl:(NSString *)movieUrl{
     _movieUrl = movieUrl;
     _playerManager.movieUrl = movieUrl;
-    self.placeholderImageView.image = [[UIImage imageNamed:@"star@2x.jpg"] blurredImage:0.3];
-    /*
-    [self.placeholderImageView sd_setImageWithURL:[NSURL URLWithString:@"http://image.youjuke.com/images/tuku/upload/20160606/20160606144855537.jpg"] placeholderImage:[[UIImage imageNamed:@"placeholder_img"] blurredImage:0.5] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        self.placeholderImageView.image = [image blurredImage:0.5];
-    }];
-    */
+    
+}
+
+-(void)setPlaceholderImage:(NSString *)placeholderImage{
+    if (!placeholderImage) return;
+    _placeholderImage = placeholderImage;
+    if ([_placeholderImage hasPrefix:@"http"]) {
+        
+        NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:_placeholderImage]];
+        self.placeholderImageView.image = [[UIImage imageWithData:imgData] blurredImage:0.5];
+        
+        /*
+         //使用SDWebImage
+        [self.placeholderImageView sd_setImageWithURL:[NSURL URLWithString:_placeholderImage] placeholderImage:[[UIImage imageNamed:@"star@2x.jpg"] blurredImage:0.5] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            self.placeholderImageView.image = [image blurredImage:0.5];
+        }];
+        */
+    }else{
+      self.placeholderImageView.image = [[UIImage imageNamed:_placeholderImage] blurredImage:0.3];
+    }
 }
 
 -(void)layoutSubviews{
@@ -103,7 +117,7 @@
 -(void)playVideoAction:(UIButton*)sender{
     sender.selected = !sender.selected;
     if (sender.selected) {
-        [_playerManager start];
+        [_playerManager play];
         self.placeholderImageView.hidden = YES;
     }else{
        [_playerManager pause];
@@ -112,7 +126,7 @@
 }
 
 -(void)reloadVideoAction:(UIButton*)senser{
-    [_playerManager start];
+    [_playerManager play];
 
 }
 

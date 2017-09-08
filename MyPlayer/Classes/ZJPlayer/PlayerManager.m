@@ -39,6 +39,8 @@ static AVAudioSession *audioSession;
     return self;
 }
 
+#pragma mark -- Public Mothed
+
 -(void)showInView:(UIView *)view{
     _supView = view;
     if (_movieUrl) {
@@ -81,7 +83,7 @@ static AVAudioSession *audioSession;
         playerLayer.backgroundColor = [UIColor clearColor].CGColor;
         
         [self addObserver];
-        //[self start];
+        //[self play];
     }
     
     playerLayer.frame = _supView.bounds;
@@ -90,6 +92,27 @@ static AVAudioSession *audioSession;
     [self.supView.layer addSublayer:playerLayer];
     
 }
+
+-(void)setVolume:(float)volume{
+    
+}
+
+-(float)getVolume{
+    
+    return 0;
+}
+
+-(void)setMute:(BOOL)mute{
+    
+}
+
+-(BOOL)isMute{
+    
+    return NO;
+}
+
+#pragma mark -- 添加监听
+
 -(void)addObserver{
     
     [self.player.currentItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:(__bridge void * _Nullable)([self class])];
@@ -230,7 +253,7 @@ static AVAudioSession *audioSession;
 }
 
 #pragma mark -- 开始/暂停方法
-- (void)start {
+- (void)play {
     [self.player play];
     isPlaying = YES;
 }

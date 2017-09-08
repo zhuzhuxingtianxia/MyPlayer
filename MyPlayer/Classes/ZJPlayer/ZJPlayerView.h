@@ -11,4 +11,5 @@
 @interface ZJPlayerView : UIView
 @property(nonatomic,weak)UIViewController *cuttentController;
 @property(nonatomic,copy)NSString *movieUrl;
+@property(nonatomic,copy)NSString *placeholderImage;
 @end

@@ -11,11 +11,11 @@
 
 @interface VideoListCell ()
 @property(nonatomic,strong)ZJPlayerView *playerView;
-@property(nonatomic,strong)id  model;
+@property(nonatomic,strong)VideoListModel  *model;
 @end
 @implementation VideoListCell
 
-+(VideoListCell*)shareCell:(UITableView*)tableView model:(id)model{
++(VideoListCell*)shareCell:(UITableView*)tableView model:(VideoListModel*)model{
     VideoListCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([self class])];
     if (!cell) {
         cell = [[VideoListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([self class])];
@@ -42,15 +42,10 @@
     [super layoutSubviews];
 }
 
--(void)setModel:(id)model{
+-(void)setModel:(VideoListModel*)model{
     _model = model;
-    NSInteger pp = arc4random()%10;
-    if (pp%3 == 1) {
-         self.playerView.movieUrl = @"http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4";
-    }else if (pp%3 == 2){
-        self.playerView.movieUrl = @"register_guide_video.mp4";
-    }
-   
+    self.playerView.movieUrl = _model.videoUrl;
+    self.playerView.placeholderImage = _model.launchImg;
 }
 
 #pragma mark -- getter

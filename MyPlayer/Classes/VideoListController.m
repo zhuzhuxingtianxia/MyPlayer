@@ -11,6 +11,7 @@
 
 @interface VideoListController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView *tableView;
+@property(nonatomic,strong)NSMutableArray *dataArray;
 @end
 
 @implementation VideoListController
@@ -21,6 +22,8 @@
     self.title = @"视频列表";
     
     [self buildView];
+    
+    [self getLoadData];
 }
 
 -(void)buildView{
@@ -33,16 +36,34 @@
 
 }
 
+-(void)getLoadData{
+    __weak typeof(self) weakSelf = self;
+    [VideoListModel getDataWithURL:@"Video_List" response:^(id json) {
+        if ([json isKindOfClass:[NSArray class]]) {
+            NSArray *responeArray = (NSArray*)json;
+            if (!weakSelf.dataArray) {
+                weakSelf.dataArray = [NSMutableArray array];
+            }
+            for (NSDictionary *item in responeArray) {
+                VideoListModel *videoModel = [[VideoListModel alloc] initWithDict:item];
+                [weakSelf.dataArray addObject:videoModel];
+            }
+        }
+        [weakSelf.tableView reloadData];
+    }];
+}
+
 #pragma mark --UITableViewDelegate
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    return self.dataArray.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 200;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    VideoListCell *cell = [VideoListCell shareCell:tableView model:nil];
+    VideoListModel *model = self.dataArray[indexPath.row];
+    VideoListCell *cell = [VideoListCell shareCell:tableView model:model];
     
     return cell;
 }
