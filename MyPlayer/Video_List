@@ -3,28 +3,32 @@
   {
      "videoName": "视屏名称1",
      "launchImg": "star@2x.jpg",
-     "videoUrl": "register_guide_video.mp4"
-
+     "videoUrl": "38025-GALA-YOUNGFORYOU[68mtv.com].mp4",
+     "playing" : "0"
   },
   {
     "videoName": "视屏名称2",
     "launchImg": "http://image.youjuke.com/images/tuku/upload/20160606/20160606144855537.jpg",
-    "videoUrl": "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"
+    "videoUrl": "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",
+    "playing" : "0"
   },
   {
     "videoName": "视屏名称3",
     "launchImg": "star@2x.jpg",
-    "videoUrl": "http://2449.vod.myqcloud.com/2449_22ca37a6ea9011e5acaaf51d105342e3.f20.mp4"
+    "videoUrl": "http://2449.vod.myqcloud.com/2449_22ca37a6ea9011e5acaaf51d105342e3.f20.mp4",
+    "playing" : "0"
   },
   {
     "videoName": "视屏名称4",
     "launchImg": "http://image.youjuke.com/images/tuku/upload/20160606/20160606144855537.jpg",
-    "videoUrl": "38025-GALA-YOUNGFORYOU[68mtv.com].mp4"
+    "videoUrl": "register_guide_video.mp4",
+    "playing" : "0"
   },
   {
     "videoName": "视屏名称5",
     "launchImg": "star@2x.jpg",
-    "videoUrl": "http://www.jxvdy.com/file/upload/201309/18/18-10-03-19-3.mp4"
+    "videoUrl": "http://www.jxvdy.com/file/upload/201309/18/18-10-03-19-3.mp4",
+    "playing" : "0"
   }
 
 ]

@@ -94,21 +94,18 @@ static AVAudioSession *audioSession;
 }
 
 -(void)setVolume:(float)volume{
-    
+    self.player.volume = volume;
+    _volume = self.player.volume;
 }
 
--(float)getVolume{
-    
-    return 0;
-}
-
+//是否需要静音
 -(void)setMute:(BOOL)mute{
-    
+    self.player.muted = mute;
 }
 
 -(BOOL)isMute{
     
-    return NO;
+    return self.player.isMuted;
 }
 
 #pragma mark -- 添加监听

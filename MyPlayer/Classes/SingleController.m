@@ -23,6 +23,7 @@
      playerView.backgroundColor = [UIColor blackColor];
      
      playerView.movieUrl = @"http://2449.vod.myqcloud.com/2449_22ca37a6ea9011e5acaaf51d105342e3.f20.mp4";//@"38025-GALA-YOUNGFORYOU[68mtv.com].mp4";//@"http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4";//
+    playerView.placeholderImage = @"star@2x.jpg";
      playerView.cuttentController = self;
      [self.view addSubview:playerView];
      

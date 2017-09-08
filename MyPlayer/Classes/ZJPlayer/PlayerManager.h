@@ -11,15 +11,16 @@
 @protocol PlayerManagerDelegate <NSObject>
 @optional
 /*
- 视频的总时间，和缓冲的时间进度
+ @param totalTime 视频的总时间
+ @param bufferTime 缓冲的时间进度
  */
 -(void)playerManagerTotalTime:(NSInteger)totalTime bufferTime:(NSInteger)bufferTime;
 /*
- 播放的当前时间
+ @param 播放的当前时间
  */
 -(void)playerManagerCuttentTime:(NSInteger)cuttentTime;
 /*
- 播放状态回调
+ @param 播放状态回调
  */
 -(void)playerManagerPlayerStatus:(AVPlayerItemStatus)itemStatus;
 /*
@@ -65,17 +66,8 @@
 @property (nonatomic, assign, getter=isMute) BOOL mute;
 /**
  *  设置音量，范围是0-1.0，默认是1.0
- *
- *  @param volume 音量
-
  */
-- (void)setVolume:(float)volume;
+@property (nonatomic, assign)float volume;
 
-/**
- *  获取音量
- *
- *  @return 音量
- */
-- (float)getVolume;
 
 @end

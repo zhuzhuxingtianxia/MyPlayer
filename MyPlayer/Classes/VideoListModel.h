@@ -13,6 +13,8 @@
 @property(nonatomic,copy)NSString  *videoName;
 @property(nonatomic,copy)NSString  *launchImg;
 @property(nonatomic,copy)NSString  *videoUrl;
+//播放状态 默认都是0
+@property(nonatomic,copy)NSString  *playing;
 
 -(instancetype)initWithDict:(NSDictionary*)dict;
 

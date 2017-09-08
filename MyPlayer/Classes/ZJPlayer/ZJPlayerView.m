@@ -75,8 +75,12 @@
     if (!placeholderImage) return;
     _placeholderImage = placeholderImage;
     if ([_placeholderImage hasPrefix:@"http"]) {
-        
-        NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:_placeholderImage]];
+#warning  这个方法会导致界面卡顿
+      NSData *imgData =  [[NSUserDefaults standardUserDefaults] objectForKey:[_placeholderImage stringByAddingPercentEscapesUsingEncoding:NSUTF16StringEncoding]];
+        if (!imgData) {
+            imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:_placeholderImage]];
+            [[NSUserDefaults standardUserDefaults] setObject:imgData forKey:[_placeholderImage stringByAddingPercentEscapesUsingEncoding:NSUTF16StringEncoding]];
+        }
         self.placeholderImageView.image = [[UIImage imageWithData:imgData] blurredImage:0.5];
         
         /*
@@ -291,7 +295,7 @@
 -(UIImageView*)placeholderImageView{
     if (!_placeholderImageView) {
         _placeholderImageView = [[UIImageView alloc] init];
-        _placeholderImageView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        _placeholderImageView.backgroundColor = [UIColor blackColor];
         _placeholderImageView.userInteractionEnabled = YES;
     }
     return _placeholderImageView;
