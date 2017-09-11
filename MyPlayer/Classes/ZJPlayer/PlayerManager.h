@@ -4,10 +4,12 @@
 //
 //  Created by Jion on 2017/8/8.
 //  Copyright © 2017年 Youjuke. All rights reserved.
-//
+// 启动图，音量控制，手势交互等需要处理
+
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
+
 @protocol PlayerManagerDelegate <NSObject>
 @optional
 /*

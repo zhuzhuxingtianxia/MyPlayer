@@ -266,6 +266,35 @@ static AVAudioSession *audioSession;
         completionHandler(finished);
     }];
 }
+//获取视频的缩略图
+- (UIImage *)getImageVideo:(NSString *)videoURL{
+    UIImage *image = nil;
+    @try {
+        
+        //根据URL获取AVURLAsset
+        AVURLAsset *urlAsset = [[AVURLAsset alloc] initWithURL:[NSURL URLWithString:videoURL] options:nil];
+        
+        //更具AVURLAsset 获取AVAssetImageGenerator
+        AVAssetImageGenerator *gen = [[AVAssetImageGenerator alloc] initWithAsset:urlAsset];
+        
+        // 截图的时候调整到正确的方向
+        gen.appliesPreferredTrackTransform = YES;
+        
+        //截取1.0秒处的图片，30 为每秒30帧
+        CMTime time = CMTimeMakeWithSeconds(1.0, 30);
+        CGImageRef cgImage = [gen copyCGImageAtTime:time actualTime:nil error:nil];
+        
+        image = [UIImage imageWithCGImage:cgImage];
+    }
+    @catch (NSException *exception) {
+        
+    }
+    @finally {
+        
+    }
+    
+    return image;
+}
 
 #pragma mark - privte
 - (NSTimeInterval)availableDuration:(AVPlayerItem*)playerItem {
