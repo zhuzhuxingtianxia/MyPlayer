@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "VideoListModel.h"
-
+#import "ZJPlayerView.h"
 @interface VideoListCell : UITableViewCell
-
-+(VideoListCell*)shareCell:(UITableView*)tableView model:(VideoListModel*)model;
+@property(readonly)ZJPlayerView *playerView;
++(VideoListCell*)shareCell:(UITableView*)tableView model:(VideoListModel*)model comple:(void (^)())playBeforeBlock;
 @end

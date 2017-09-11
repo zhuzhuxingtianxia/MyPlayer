@@ -7,7 +7,6 @@
 //
 
 #import "ZJPlayerView.h"
-#import "PlayerManager.h"
 #import "UIImage+Additions.h"
 @interface ZJPlayerView ()<PlayerManagerDelegate>
 {
@@ -119,10 +118,20 @@
 }
 #pragma mark -- Action
 -(void)playVideoAction:(UIButton*)sender{
+    
     sender.selected = !sender.selected;
     if (sender.selected) {
-        [_playerManager play];
-        self.placeholderImageView.hidden = YES;
+        __weak typeof(self) weakSelf = self;
+        [UIView animateWithDuration:0.0 animations:^{
+            if (weakSelf.playBeforeOperation) {
+                weakSelf.playBeforeOperation();
+            }
+            
+        } completion:^(BOOL finished) {
+            [weakSelf.playerManager play];
+            weakSelf.placeholderImageView.hidden = YES;
+        }];
+        
     }else{
        [_playerManager pause];
        

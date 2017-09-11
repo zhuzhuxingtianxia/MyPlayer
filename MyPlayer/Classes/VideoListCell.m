@@ -7,21 +7,21 @@
 //
 
 #import "VideoListCell.h"
-#import "ZJPlayerView.h"
 
 @interface VideoListCell ()
 @property(nonatomic,strong)ZJPlayerView *playerView;
 @property(nonatomic,strong)VideoListModel  *model;
+@property(nonatomic,copy)void (^playBeforeBlock)();
 @end
 @implementation VideoListCell
 
-+(VideoListCell*)shareCell:(UITableView*)tableView model:(VideoListModel*)model{
++(VideoListCell*)shareCell:(UITableView*)tableView model:(VideoListModel*)model comple:(void (^)())playBeforeBlock{
     VideoListCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([self class])];
     if (!cell) {
         cell = [[VideoListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([self class])];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    
+    cell.playBeforeBlock = playBeforeBlock;
     cell.model = model;
     
     return cell;
@@ -46,6 +46,10 @@
     _model = model;
     self.playerView.movieUrl = _model.videoUrl;
     self.playerView.placeholderImage = _model.launchImg;
+    __weak typeof(self) weakSlef = self;
+    self.playerView.playBeforeOperation = ^{
+        weakSlef.playBeforeBlock();
+    };
 }
 
 #pragma mark -- getter

@@ -12,6 +12,7 @@
 @interface VideoListController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)NSMutableArray *dataArray;
+@property (nonatomic,strong)NSMutableDictionary *cells;
 @end
 
 @implementation VideoListController
@@ -63,7 +64,16 @@
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     VideoListModel *model = self.dataArray[indexPath.row];
-    VideoListCell *cell = [VideoListCell shareCell:tableView model:model];
+    NSString *key = [NSString stringWithFormat:@"%zd",indexPath.row];
+    VideoListCell *cell = [self.cells objectForKey:key];
+    if (!cell) {
+        cell = [VideoListCell shareCell:tableView model:model comple:^{
+            for (VideoListCell *cell in self.cells.allValues) {
+                [cell.playerView.playerManager pause];
+            }
+        }];
+        [self.cells setObject:cell forKey:key];
+    }
     
     return cell;
 }
@@ -85,6 +95,13 @@
         
     }
     return _tableView;
+}
+- (NSMutableDictionary *)cells
+{
+    if (!_cells) {
+        _cells = [[NSMutableDictionary alloc] init];
+    }
+    return _cells;
 }
 
 - (void)didReceiveMemoryWarning {
