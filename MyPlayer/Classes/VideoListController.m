@@ -68,9 +68,7 @@
     VideoListCell *cell = [self.cells objectForKey:key];
     if (!cell) {
         cell = [VideoListCell shareCell:tableView model:model comple:^{
-            for (VideoListCell *cell in self.cells.allValues) {
-                [cell.playerView.playerManager pause];
-            }
+
         }];
         [self.cells setObject:cell forKey:key];
     }

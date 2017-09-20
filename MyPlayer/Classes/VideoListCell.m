@@ -46,9 +46,8 @@
     _model = model;
     self.playerView.movieUrl = _model.videoUrl;
     self.playerView.placeholderImage = _model.launchImg;
-    __weak typeof(self) weakSlef = self;
     self.playerView.playBeforeOperation = ^{
-        weakSlef.playBeforeBlock();
+        [[NSNotificationCenter defaultCenter] postNotificationName:ZJPlayBeforeOperationNotification object:nil];
     };
 }
 

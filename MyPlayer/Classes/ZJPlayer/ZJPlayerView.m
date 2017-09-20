@@ -8,6 +8,9 @@
 
 #import "ZJPlayerView.h"
 #import "UIImage+Additions.h"
+
+NSString * const ZJPlayBeforeOperationNotification = @"ZJPlayBeforeOperation_Notification_Name";
+
 @interface ZJPlayerView ()<PlayerManagerDelegate>
 {
     NSInteger _totalTime;
@@ -62,6 +65,8 @@
     
     [self addSubview:self.activityView];
     [self.activityView startAnimating];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playBeforeOperation:) name:ZJPlayBeforeOperationNotification object:nil];
 }
 
 -(void)setMovieUrl:(NSString *)movieUrl{
@@ -116,6 +121,13 @@
     
     self.sliderView.frame = CGRectMake(CGRectGetMaxX(self.cuttentPlayTimeLabel.frame), 10, self.totalPlayTimeLabel.frame.origin.x - CGRectGetMaxX(self.cuttentPlayTimeLabel.frame), 20);
 }
+
+-(void)playBeforeOperation:(NSNotification*)fication{
+    self.playBtn.selected = NO;
+    [_playerManager pause];
+    
+}
+
 #pragma mark -- Action
 -(void)playVideoAction:(UIButton*)sender{
     
@@ -128,6 +140,7 @@
             }
             
         } completion:^(BOOL finished) {
+            weakSelf.playBtn.selected = YES;
             [weakSelf.playerManager play];
             weakSelf.placeholderImageView.hidden = YES;
         }];
@@ -422,7 +435,8 @@
 }
 
 -(void)dealloc{
-    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:ZJPlayBeforeOperationNotification object:nil];
+
 }
 
 /**

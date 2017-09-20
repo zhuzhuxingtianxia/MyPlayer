@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "PlayerManager.h"
+//该通知可暂停播放同时修改播放按钮状态为暂停
+FOUNDATION_EXPORT NSString * const ZJPlayBeforeOperationNotification;
+
 typedef void(^PlayBeforeOperation)();
 @interface ZJPlayerView : UIView
 @property(readonly)PlayerManager *playerManager;
