@@ -111,7 +111,7 @@ static AVAudioSession *audioSession;
 #pragma mark -- 添加监听
 
 -(void)addObserver{
-    
+    //状态监听
     [self.player.currentItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:(__bridge void * _Nullable)([self class])];
     __weak typeof(self) weakSelf = self;
     timeObserver = [self.player addPeriodicTimeObserverForInterval:CMTimeMake(1, 1) queue:dispatch_get_global_queue(0, 0) usingBlock:^(CMTime time) {
@@ -277,10 +277,10 @@ static AVAudioSession *audioSession;
     @try {
         
         //根据URL获取AVURLAsset
-        AVURLAsset *urlAsset = [[AVURLAsset alloc] initWithURL:[NSURL URLWithString:videoURL] options:nil];
+        //AVURLAsset *urlAsset = [[AVURLAsset alloc] initWithURL:[NSURL URLWithString:videoURL] options:nil];
         
         //更具AVURLAsset 获取AVAssetImageGenerator
-        AVAssetImageGenerator *gen = [[AVAssetImageGenerator alloc] initWithAsset:urlAsset];
+        AVAssetImageGenerator *gen = [[AVAssetImageGenerator alloc] initWithAsset:self.player.currentItem.asset];
         
         // 截图的时候调整到正确的方向
         gen.appliesPreferredTrackTransform = YES;
@@ -310,7 +310,8 @@ static AVAudioSession *audioSession;
         float startSeconds = CMTimeGetSeconds(timeRange.start);
         float durationSeconds = CMTimeGetSeconds(timeRange.duration);
         // 计算缓冲总进度
-        NSTimeInterval result = startSeconds + durationSeconds;        return result;
+        NSTimeInterval result = startSeconds + durationSeconds;
+        return result;
     }else {
         return 0.0f;
     }
