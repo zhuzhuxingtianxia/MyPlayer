@@ -7,7 +7,7 @@
 //
 
 #import "OtherController.h"
-
+#import "ImageDownLoadOperation.h"
 @interface OtherController ()
 
 @end
@@ -18,6 +18,29 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"其他";
+    
+    [self buildView];
+}
+-(void)buildView{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitle:@"自定义NSOperation" forState:UIControlStateNormal];
+    [button sizeToFit];
+    button.frame = CGRectMake(10, 10+64, button.frame.size.width+10, 40);
+    [button setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(gotoOperation) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
+}
+
+#pragma mark -- Action
+-(void)gotoOperation{
+    ImageDownLoadOperation *ysOper = [[ImageDownLoadOperation alloc] initOperationWithUrl:[NSURL URLWithString:@"https://m.youjuke.com/images/zt/zt_punish.jpg"] delegate:self];
+    [ysOper start];
+}
+
+#pragma mark -- ImageDownLoadOperationDelegate
+
+-(void)ImageDownLoadFinished:(UIImage *)image{
+    NSLog(@"%@",image);
 }
 
 - (void)didReceiveMemoryWarning {

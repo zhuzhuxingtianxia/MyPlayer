@@ -268,6 +268,11 @@ static AVAudioSession *audioSession;
 }
 //获取视频的缩略图
 - (UIImage *)getImageVideo:(NSString *)videoURL{
+    //截取1.0秒处的图片
+   return  [self getImageVideo:videoURL seekToTime:1.0];
+}
+
+- (UIImage *)getImageVideo:(NSString *)videoURL seekToTime:(NSTimeInterval)ptime{
     UIImage *image = nil;
     @try {
         
@@ -280,9 +285,9 @@ static AVAudioSession *audioSession;
         // 截图的时候调整到正确的方向
         gen.appliesPreferredTrackTransform = YES;
         
-        //截取1.0秒处的图片，30 为每秒30帧
-        CMTime time = CMTimeMakeWithSeconds(1.0, 30);
-        CGImageRef cgImage = [gen copyCGImageAtTime:time actualTime:nil error:nil];
+        //截取ptime时间点的图片，30 为每秒30帧
+        CMTime cmtime = CMTimeMakeWithSeconds(ptime, 30);
+        CGImageRef cgImage = [gen copyCGImageAtTime:cmtime actualTime:nil error:nil];
         
         image = [UIImage imageWithCGImage:cgImage];
     }

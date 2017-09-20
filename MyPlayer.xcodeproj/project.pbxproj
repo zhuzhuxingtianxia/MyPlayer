@@ -47,6 +47,7 @@
 		B697168C1F623F820008D71F /* ZJPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B697167A1F623F820008D71F /* ZJPlayerView.m */; };
 		B697168F1F6276440008D71F /* VideoListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B697168E1F6276440008D71F /* VideoListModel.m */; };
 		B69716911F6288AF0008D71F /* Video_List in Resources */ = {isa = PBXBuildFile; fileRef = B69716901F6288AF0008D71F /* Video_List */; };
+		B69716981F6775C30008D71F /* ImageDownLoadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B69716971F6775C30008D71F /* ImageDownLoadOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,8 @@
 		B697168D1F6276440008D71F /* VideoListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListModel.h; sourceTree = "<group>"; };
 		B697168E1F6276440008D71F /* VideoListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListModel.m; sourceTree = "<group>"; };
 		B69716901F6288AF0008D71F /* Video_List */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Video_List; sourceTree = "<group>"; };
+		B69716961F6775C30008D71F /* ImageDownLoadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownLoadOperation.h; sourceTree = "<group>"; };
+		B69716971F6775C30008D71F /* ImageDownLoadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownLoadOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +182,8 @@
 				B6257E0B1F3C66B700D834BC /* AppDelegate */,
 				B6257E0F1F3C66D900D834BC /* Classes */,
 				B6257DE11F3C664600D834BC /* Main.storyboard */,
+				B69716961F6775C30008D71F /* ImageDownLoadOperation.h */,
+				B69716971F6775C30008D71F /* ImageDownLoadOperation.m */,
 				B6257DE41F3C664600D834BC /* Assets.xcassets */,
 				B6257DE61F3C664600D834BC /* LaunchScreen.storyboard */,
 				B6257DE91F3C664600D834BC /* Info.plist */,
@@ -454,6 +459,7 @@
 				B6257E391F3C6DCB00D834BC /* VideoListCell.m in Sources */,
 				B6257E4E1F3C6DF500D834BC /* UIImage+Additions.m in Sources */,
 				B6257E121F3C66DA00D834BC /* ViewController.m in Sources */,
+				B69716981F6775C30008D71F /* ImageDownLoadOperation.m in Sources */,
 				B6257DDA1F3C664600D834BC /* main.m in Sources */,
 				B697162A1F590FA80008D71F /* UINavigationController+Autorotate.m in Sources */,
 				B6257E531F3C73D600D834BC /* SingleController.m in Sources */,
