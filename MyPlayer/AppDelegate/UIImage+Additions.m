@@ -1,9 +1,9 @@
 //
 //  UIImage+Additions.m
-//  ASK
+//  MyPlayer
 //
-//  Created by Pinka on 14-6-18.
-//  Copyright (c) 2014年 yiyaowang. All rights reserved.
+//  Created by Jion on 2017/8/10.
+//  Copyright © 2017年 天天. All rights reserved.
 //
 
 #import "UIImage+Additions.h"
