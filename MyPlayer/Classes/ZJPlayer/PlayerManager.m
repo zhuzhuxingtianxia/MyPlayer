@@ -27,7 +27,7 @@ static AVAudioSession *audioSession;
     self = [super init];
     if (self) {
         //设置系统静音模式下可以播放声音
-        if (!audioSession) {
+        if (!audioSession) {//AVAudioPlayer
             AVAudioSession *session = [AVAudioSession sharedInstance];
             [session setActive:YES error:nil];
             [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
@@ -279,7 +279,7 @@ static AVAudioSession *audioSession;
         //根据URL获取AVURLAsset
         //AVURLAsset *urlAsset = [[AVURLAsset alloc] initWithURL:[NSURL URLWithString:videoURL] options:nil];
         
-        //更具AVURLAsset 获取AVAssetImageGenerator
+        //根据AVURLAsset 获取AVAssetImageGenerator
         AVAssetImageGenerator *gen = [[AVAssetImageGenerator alloc] initWithAsset:self.player.currentItem.asset];
         
         // 截图的时候调整到正确的方向
